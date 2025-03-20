@@ -5,4 +5,4 @@
 3. Open app.py with doubleclick or through the terminal
 4. Click on any of the buttons to open a XML-File.
 
-![Example_image](images/example.jpg)
+![Example_image](images/example_2.jpg)

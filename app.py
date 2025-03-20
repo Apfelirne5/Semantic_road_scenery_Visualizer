@@ -16,8 +16,8 @@ def open_xml_file():
     file_path = filedialog.askopenfilename()
     my_label.config(text=file_path)
     path = Path(file_path)
-
-    tree = ET.parse(path.name)
+    
+    tree = ET.parse(path)
     bssd = tree.getroot()
     open_html(bssd)
 
@@ -27,7 +27,7 @@ def open_one_way():
     my_label.config(text=file_path)
     path = Path(file_path)
 
-    tree = ET.parse(path.name)
+    tree = ET.parse(path)
     bssd = tree.getroot()
     way_id = str(e.get())
     open_html_way(bssd, way_id)
@@ -38,7 +38,7 @@ def open_network():
     my_label.config(text=file_path)
     path = Path(file_path)
 
-    tree = ET.parse(path.name)
+    tree = ET.parse(path)
     bssd = tree.getroot()
     vis_network(bssd)
 
