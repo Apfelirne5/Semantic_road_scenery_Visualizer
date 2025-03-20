@@ -1,0 +1,104 @@
+<root>
+    <way id="1" from="1" to="4" node="-1">
+        <segment id="1"></segment>
+        <segment id="2"></segment>
+        <segment id="3"></segment>
+        <segment id="4"></segment>
+    </way>
+    <way id="1" from="1" to="4" node="-1">
+        <segment id="1"></segment>
+        <segment id="2"></segment>
+        <segment id="3"></segment>
+        <segment id="4"></segment>
+    </way>
+    <way id="2" from="1" to="3" node="-1">
+        <segment id="1"></segment>
+        <segment id="2"></segment>
+        <segment id="3"></segment>
+    </way>
+    <way id="3" from="2" to="3" node="-1">
+        <segment id="1"></segment>
+        <segment id="2"></segment>
+    </way>
+    <way id="4" from="1" to="3" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="5" from="1" to="4" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="6" from="2" to="5" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="7" from="2" to="6" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="8" from="2" to="7" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="9" from="7" to="8" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="10" from="7" to="9" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="11" from="8" to="1" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="12" from="8" to="9" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="13" from="9" to="10" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="14" from="10" to="11" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="15" from="10" to="12" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="16" from="10" to="13" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="17" from="13" to="14" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="18" from="14" to="12" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="19" from="14" to="15" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="20" from="15" to="16" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="21" from="15" to="3" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="22" from="16" to="17" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="23" from="17" to="5" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <way id="24" from="18" to="17" node="-1">
+        <segment id="1"></segment>
+    </way>
+    <node id="1" infinitesimal="no"></node>
+    <node id="2" infinitesimal="yes"></node>
+    <node id="3" infinitesimal="no"></node>
+    <node id="4" infinitesimal="yes"></node>
+    <node id="5" infinitesimal="no"></node>
+    <node id="6" infinitesimal="no"></node>
+    <node id="7" infinitesimal="no"></node>
+    <node id="8" infinitesimal="no"></node>
+    <node id="9" infinitesimal="no"></node>
+    <node id="10" infinitesimal="no"></node>
+    <node id="11" infinitesimal="no"></node>
+    <node id="12" infinitesimal="no"></node>
+    <node id="13" infinitesimal="no"></node>
+    <node id="14" infinitesimal="no"></node>
+    <node id="15" infinitesimal="no"></node>
+    <node id="16" infinitesimal="no"></node>
+    <node id="17" infinitesimal="no"></node>
+    <node id="18" infinitesimal="no"></node>
+</root>

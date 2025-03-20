@@ -1,0 +1,12 @@
+name: myenv # Change the environment name if needed
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10 # Specify a Python version (adjust if needed)
+  - networkx=2.5
+  - pyvis=0.1.9
+  - jinja2=2.11.3
+  - pip
+  - pip:
+      - pyvis==0.1.9 # Ensure pyvis is installed via pip if not available in conda

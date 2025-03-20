@@ -1,0 +1,1972 @@
+body {
+    /*margin: 0;*/
+    background: #e0e0e0;
+}
+
+header {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin: 10px 10px 30px 10px;
+
+    border-radius: 0.5em;
+
+    width: 1500px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 7;
+
+}
+
+:root {
+  --longitudinalWidth: 12px;
+
+  --allowed_color: #008D00;
+  --conditional_color: orange;
+  --prohibited_color: #a52019;
+  --not_possible_color: black;
+
+  --own_reserved_color: #44AA99;
+  --equally_reserved_color: darkgray;
+  --externally_reserved_color: #CC6677;
+
+  --pedestrian_hover: black ;
+  --bicycle_hover: black ;
+  --motor_vehicle_hover: black ;
+  --railed_vehicle_hover: black ;
+
+}
+
+#bssd_world {
+
+}
+
+.bssd_segment {
+    width: 360px;
+}
+
+
+.showonhover {
+    z-index: 9;
+}
+
+#title {
+    font-size: 20px;
+    background-color: lightblue;
+    border-radius: 0.5em;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#info {
+    display: flex;
+}
+
+.bd_radio_buttons {
+    display: inline-block;
+}
+
+input[type="radio"]{
+     display: none;
+}
+
+label{
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    border: 3px solid #005500;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: inline-flex;
+    align-items: center;
+    margin: 0px 5px;
+}
+
+label.label_tla_yes,
+label.label_tla_no {
+
+    border: 3px solid darkred;
+}
+
+label::before {
+  content: '';
+  height: 10px;
+  width: 10px;
+  border: 5px solid #005500;
+  border-radius: 50%;
+  margin-right: 5px;  
+}
+
+label.label_tla_yes::before,
+label.label_tla_no::before {
+  border: 3px solid darkred;
+}
+
+
+input[type="radio"]:checked + label{
+  background-color: #005500;
+  color: white;
+  
+}
+
+input[type="radio"]:checked + label::before {
+  height: 13px;
+  width: 13px;
+  border: 7px solid white;
+  background-color: #005500;
+}
+
+input[type="radio"]:checked + label.label_tla_yes::before {
+  background-color: darkred;
+}
+
+input[type="radio"]:checked + label.label_tla_no::before {
+  background-color: #555555;
+}
+
+input[type="radio"]:checked + label.none {
+    /*background-image: linear-gradient(90deg, darkred 33.33%, #e6ac00 33.33%, #e6ac00 66.66%, darkgreen 66.66%);*/
+    background-color: #555555;
+    border: 3px solid transparent;
+}
+
+input[type="radio"]:checked + label.label_tla_yes {
+    /*background-image: linear-gradient(90deg, darkred 33.33%, #e6ac00 33.33%, #e6ac00 66.66%, darkgreen 66.66%);*/
+    background-color: darkred;
+}
+
+input[type="radio"]:checked + label.label_tla_no {
+    /*background-image: linear-gradient(90deg, darkred 33.33%, #e6ac00 33.33%, #e6ac00 66.66%, darkgreen 66.66%);*/
+    background-color: #555555;
+    border: 3px solid transparent;
+}
+
+label.label_bd {
+    background-color: lightgray;
+}
+
+label.label_tla_yes {
+    background-color: lightgray;
+}
+
+label.label_tla_no {
+    background-color: lightgray;
+}
+
+
+.bd_arrow {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    margin-left: 10px;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+}
+
+.showBehaviourDirection_forward .bd_arrow {
+    background-image: url("../templates/signs/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-color: orange;
+    border-radius: 0.3rem;
+}
+
+.showBehaviourDirection_backward .bd_arrow {
+    background-image: url("../templates/signs/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    background-color: orange;
+    border-radius: 0.3rem;
+}
+
+.tla_trafficlight {
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.showTla_Yes .tla_trafficlight {
+    background-image: url("../templates/signs/trafficlight-on.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+}
+
+.showTla_No .tla_trafficlight {
+    background-image: url("../templates/signs/trafficlight-off.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+#preferences {
+    padding: 10px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    width: 495px;
+
+    border-radius: 0.5em;
+    border: 2px solid black;
+    background-color: #cee6b4;
+}
+
+#ref_direction {
+    padding: 10px;
+    background-color: white;
+    float: left;
+
+    border-radius: 0.5em;
+    border: 2px solid black;
+}
+
+#legend {
+    background-color: white;
+    float: right;
+    display: flex;
+
+    border-radius: 0.5em;
+    border: 2px solid black;
+
+}
+
+#ref_direction_arrow {
+    width: 400px;
+    height: 149px;
+    background-image: url("../templates/signs/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+#ref_direction_title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+
+.bd {
+    padding-bottom: 10px;
+    border-bottom: 2px solid black; 
+}
+
+.tla {
+    border-radius: 0.5em;
+    position: relative;
+}
+
+.tla#no_tla::before,
+.tla#no_tla::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #c1121c;
+
+    position: absolute;
+
+    bottom: -0.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.tla#no_tla::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    
+    content: 'There are no trafficlights in these ways';
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .3rem;
+    
+    width: max-content;
+
+}
+
+.tla#no_tla:hover::before,
+.tla#no_tla:hover::after {
+    --scale: 1;
+
+}
+
+.tla#no_tla::after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+
+.title_bd{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
+    border-radius: 0.3em;
+    border: 2px solid transparent;
+    padding: 0px 5px;
+}
+
+.title_tla{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 0px 10px 0px;
+    display: inline-block;
+    position: relative;
+    border-radius: 0.3em;
+    border: 2px solid transparent;
+    padding: 0px 5px;
+
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container_boundary,
+.container_reservation,
+.container_reservation_objects {
+    display: flex;
+    flex-direction: column;
+}
+
+#legend .container{
+    margin: 5px 2px;
+}
+
+#legend .containerlast{
+    margin-bottom: 5px;
+}
+
+
+#legend .boundary {
+    width: 40px;
+    height: 5px;
+    margin: 10px 15px;
+
+}
+
+#legend .link {
+    width: 60px;
+    height: 20px;
+    margin: 10px 15px;
+
+    background-image: url("../templates/signs/arrow.svg");
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    background-color: #648FFF;
+
+
+}
+
+#legend .reservation {
+    border: 4px solid gray;
+    width: 32px;
+    height: 10px;
+    margin: 5px 15px;
+    align-self: center;
+}
+
+#legend .reservation_objects {
+    align-self: center;
+}
+
+#legend div {
+    font-size: 15px;
+}
+
+
+#pedestrian {
+    width: 30px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 0.3rem;
+    margin: 0px 20px;
+
+    position: relative;
+
+    background-image: url("../templates/signs/pedestrian.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+}
+
+#bicycle {
+    width: 50px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 0.3rem;
+    margin: 0px 10px;
+
+    position: relative;
+
+    background-image: url("../templates/signs/bicycle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+}
+
+#motorvehicle {
+    width: 60px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 0.3rem;
+    margin: 0px 5px;
+
+    position: relative;
+
+    background-image: url("../templates/signs/motor_vehicle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+}
+
+#railedvehicle {
+    width: 60px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 0.3rem;
+    margin: 0px 5px;
+
+    position: relative;
+
+    background-image: url("../templates/signs/railed_vehicle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+#allowed {
+    background-image: repeating-linear-gradient(90deg, var(--allowed_color) 0%, var(--allowed_color) 20%, white 20%, white 40%, var(--allowed_color) 40%);
+}
+#conditional {
+    background-color: var(--conditional_color);
+}
+#prohibited {
+    background-color: var(--prohibited_color);
+}
+#not_possible {
+    background-color: var(--not_possible_color);
+}
+#own_reserved {
+    background-color: var(--own_reserved_color);
+}
+#equally_reserved {
+    background-color: var(--equally_reserved_color);
+}
+#externally_reserved {
+    background-color: var(--externally_reserved_color);
+}
+
+
+
+
+/* ====== BSSD ======*/
+
+.way_info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-left: 120px;
+    display: inline-block;
+    position: relative;
+}
+
+.bssd_way {
+    width: max-content;
+    margin-top: 5px;
+    margin-bottom: 200px;
+    margin-left: 120px;
+    margin-right: 120px;
+    background: gray;
+}
+
+.bssd_midlane{
+    position: relative;
+}
+
+
+.bssd_midlane::before {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    height: 100px;
+    width: 100px;
+    background-color: lightblue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: attr(data-from_node);
+    vertical-align: middle;
+
+    position: absolute;
+
+    top: 50%;
+    transform: translateX(-100px) translateY(-50%);
+
+}
+
+.bssd_midlane::after {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    height: 100px;
+    width: 100px;
+    background-color: lightblue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: attr(data-to_node);
+    vertical-align: middle;
+
+    position: absolute;
+
+    line-height: normal;
+
+    top: 50%;
+    right: 0%;
+    transform: translateX(100px) translateY(-50%);
+
+}
+
+.bssd_rightside {
+    display: flex;
+
+
+}
+
+.bssd_leftside {
+    display: flex;
+
+
+}
+
+
+.bssd_segment {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0px 25px 0px 25px;
+}
+
+
+.bssd_leftside .bssd_segment {
+    justify-content: flex-end;
+
+}
+
+
+.bssd_lane {
+    display: flex;
+
+    margin: 10px 0px 10px 0px;
+
+    background-color: darkgray;
+    background-clip: padding-box;
+
+    border-right: var(--longitudinalWidth) solid darkgray;
+    border-left: var(--longitudinalWidth) solid darkgray;
+    border-top: 10px solid darkgray;
+    border-bottom: 10px solid darkgray;
+
+    position: relative;
+}
+
+.bssd_lane:active {
+    animation-name: zoom;
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+    z-index: 6;
+    /*
+    transform: scale(1.5);
+    z-index: 5 /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+@keyframes zoom {
+    0%  {transform: scale(1);}
+    100% {transform: scale(1.5);}
+}
+
+.showBehaviourDirection_forward .bssd_lane:active {
+    animation-name: zoom_forward;
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+    z-index: 6;
+}
+
+@keyframes zoom_forward {
+    0%  {transform: scale(1);}
+    100% {transform: scale(1.5);}
+    100% {border-right: 12px solid transparent;}
+}
+
+.showBehaviourDirection_backward .bssd_lane:active {
+    animation-name: zoom_backward;
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+    z-index: 6;
+}
+
+@keyframes zoom_backward {
+    0%  {transform: scale(1);}
+    100% {transform: scale(1.5);}
+    100% {border-left: 12px solid transparent;}
+}
+
+
+.bssd_lane_info {
+    position: relative;
+
+    width: 336px;
+    height: 75px;
+
+/*
+    margin: 5px;
+*/
+}
+
+
+
+/*=====Longitudinal Boundary=====*/
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_longitudinal_allowed {
+    border-left: var(--longitudinalWidth) dashed var(--allowed_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_longitudinal_conditional {
+    border-left: var(--longitudinalWidth) solid var(--conditional_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_longitudinal_prohibited {
+    border-left: var(--longitudinalWidth) solid var(--prohibited_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_longitudinal_notpossible {
+    border-left: var(--longitudinalWidth) solid var(--not_possible_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_longitudinal_allowed {
+    border-right: var(--longitudinalWidth) dashed var(--allowed_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_longitudinal_conditional {
+    border-right: var(--longitudinalWidth) solid var(--conditional_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_longitudinal_prohibited {
+    border-right: var(--longitudinalWidth) solid var(--prohibited_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_longitudinal_notpossible {
+    border-right: var(--longitudinalWidth) solid var(--not_possible_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+/*=====
+
+TrafficLight longitudinal boundary
+
+=====*/
+
+
+/*=====allowed=====*/
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane.Tla_Yes_forwardBehavior_boundary_longitudinal_allowed{
+    border-left: var(--longitudinalWidth) dashed var(--allowed_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_forward.showTla_No .bssd_lane.Tla_No_forwardBehavior_boundary_longitudinal_allowed{
+    border-left: var(--longitudinalWidth) dashed var(--allowed_color);
+    border-right: var(--longitudinalWidth) solid var(--allowed_color);
+}
+
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane.Tla_Yes_backwardBehavior_boundary_longitudinal_allowed{
+    border-right: var(--longitudinalWidth) dashed var(--allowed_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward.showTla_No .bssd_lane.Tla_No_backwardBehavior_boundary_longitudinal_allowed{
+    border-right: var(--longitudinalWidth) dashed var(--allowed_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+
+/*=====prohibited=====*/
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane.Tla_Yes_forwardBehavior_boundary_longitudinal_prohibited{
+    border-left: var(--longitudinalWidth) solid var(--prohibited_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_forward.showTla_No .bssd_lane.Tla_No_forwardBehavior_boundary_longitudinal_prohibited{
+    border-left: var(--longitudinalWidth) solid var(--prohibited_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane.Tla_Yes_backwardBehavior_boundary_longitudinal_prohibited{
+    border-right: var(--longitudinalWidth) solid var(--prohibited_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward.showTla_No .bssd_lane.Tla_No_backwardBehavior_boundary_longitudinal_prohibited{
+    border-right: var(--longitudinalWidth) solid var(--prohibited_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+
+/*=====not possible=====*/
+
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane.Tla_Yes_forwardBehavior_boundary_longitudinal_notpossible{
+    border-left: var(--longitudinalWidth) solid var(--not_possible_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_forward.showTla_No .bssd_lane.Tla_No_forwardBehavior_boundary_longitudinal_notpossible{
+    border-left: var(--longitudinalWidth) solid var(--not_possible_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane.Tla_Yes_backwardBehavior_boundary_longitudinal_notpossible{
+    border-right: var(--longitudinalWidth) solid var(--not_possible_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward.showTla_No .bssd_lane.Tla_No_backwardBehavior_boundary_longitudinal_notpossible{
+    border-right: var(--longitudinalWidth) solid var(--not_possible_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+
+/*=====conditional=====*/
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane.Tla_Yes_forwardBehavior_boundary_longitudinal_conditional{
+    border-left: var(--longitudinalWidth) solid var(--conditional_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_forward.showTla_No .bssd_lane.Tla_No_forwardBehavior_boundary_longitudinal_conditional{
+    border-left: var(--longitudinalWidth) solid var(--conditional_color);
+    border-right: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane.Tla_Yes_backwardBehavior_boundary_longitudinal_conditional{
+    border-right: var(--longitudinalWidth) solid var(--conditional_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+.showBehaviourDirection_backward.showTla_No .bssd_lane.Tla_No_backwardBehavior_boundary_longitudinal_conditional{
+    border-right: var(--longitudinalWidth) solid var(--conditional_color);
+    border-left: var(--longitudinalWidth) solid gray;
+}
+
+
+
+/*=====LATERAL=====*/
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_lateral_left_allowed,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_lateral_right_allowed {
+    border-top: 10px dashed var(--allowed_color);
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_lateral_left_conditional,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_lateral_right_conditional {
+    border-top: 10px solid var(--conditional_color);
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_lateral_left_prohibited,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_lateral_right_prohibited {
+    border-top: 10px solid var(--prohibited_color);
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_lateral_left_notpossible,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_lateral_right_notpossible {
+    border-top: 10px solid var(--not_possible_color);
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_lateral_right_allowed,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_lateral_left_allowed {
+    border-bottom: 10px dashed var(--allowed_color);
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_lateral_right_conditional,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_lateral_left_conditional {
+    border-bottom: 10px solid var(--conditional_color);
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_lateral_right_prohibited,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_lateral_left_prohibited {
+    border-bottom: 10px solid var(--prohibited_color);
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_boundary_lateral_right_notpossible,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_boundary_lateral_left_notpossible {
+    border-bottom: 10px solid var(--not_possible_color);
+}
+
+
+
+.bssd_lane_speed, .bssd_lane_overtake, .bssd_lane_boundary_crossing{
+    display: none;
+
+    height: 75px;
+
+    /*writing-mode: vertical-rl*/
+}
+
+.bssd_lane_reservation{
+    display: none;
+
+    height: 50px;
+    margin: auto auto auto auto;
+
+/*
+    background-color: white;
+    border-radius: 0.5em;
+*/
+    
+/*
+    background-image: radial-gradient(ellipse closest-side, white, white 100%, transparent);
+
+    writing-mode: vertical-rl
+*/
+
+}
+
+/*
+.gradient {
+    -webkit-box-shadow: 0 0 5px 5px white;
+    box-shadow: 0 0 5px 5px white;
+}
+*/
+
+
+.bssd_lane_speed {
+    width: 50px;
+    margin-right: 20px;
+    justify-content: flex-start;
+
+}
+
+.bssd_lane_overtake {
+    width: 35px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-left: 10px;
+    border: transparent;
+}
+
+.bssd_overtake_permission{
+    width: 28px;
+    height: 28px;
+    padding-left: 0px;
+
+
+    border-radius: 50%;
+
+    /*
+    -webkit-box-shadow: 0 0 1px 1px white;
+    box-shadow: 0 0 1px 1px white;
+    */
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom: 5px;
+    border: solid transparent 2px;
+}
+
+.bssd_overtake_permission:hover {
+    animation-name: zoom_overtake;
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+    z-index: 8;
+
+}
+
+@keyframes zoom_overtake {
+    0%  {transform: scale(1)}
+
+    100% {transform: scale(1.7)}
+}
+
+.bssd_lane_boundary_crossing {
+    
+    flex-direction: column;
+
+}
+
+.showBehaviourDirection_forward .bssd_lane_info,
+.showBehaviourDirection_backward .bssd_lane_info {
+    display: inline-flex;
+    justify-content: space-between;
+}
+.showBehaviourDirection_forward .bssd_lane_reservation_forwardBehavior,
+.showBehaviourDirection_backward .bssd_lane_reservation_backwardBehavior,
+.showBehaviourDirection_forward .bssd_lane_overtake_forwardBehavior,
+.showBehaviourDirection_backward .bssd_lane_overtake_backwardBehavior,
+.showBehaviourDirection_forward .bssd_lane_boundary_crossing_forwardBehavior,
+.showBehaviourDirection_backward .bssd_lane_boundary_crossing_backwardBehavior,
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane_boundary_crossing_forwardBehavior_Tla_Yes,
+.showBehaviourDirection_forward.showTla_No .bssd_lane_boundary_crossing_forwardBehavior_Tla_No,
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane_boundary_crossing_backwardBehavior_Tla_Yes,
+.showBehaviourDirection_backward.showTla_No .bssd_lane_boundary_crossing_backwardBehavior_Tla_No,
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane_reservation_forwardBehavior_Tla_Yes,
+.showBehaviourDirection_forward.showTla_No .bssd_lane_reservation_forwardBehavior_Tla_No,
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane_reservation_backwardBehavior_Tla_Yes,
+.showBehaviourDirection_backward.showTla_No .bssd_lane_reservation_backwardBehavior_Tla_No {
+    display: inline-flex;
+}
+
+.showBehaviourDirection_forward .bssd_lane_speed_forwardBehavior,
+.showBehaviourDirection_backward .bssd_lane_speed_backwardBehavior {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bssd_lane_boundary_crossing_forwardBehavior,
+.bssd_lane_boundary_crossing_forwardBehavior_Tla_Yes,
+.bssd_lane_boundary_crossing_forwardBehavior_Tla_No {
+    position: absolute;
+    right: 334px;
+}
+
+.bssd_lane_boundary_crossing_backwardBehavior,
+.bssd_lane_boundary_crossing_backwardBehavior_Tla_Yes,
+.bssd_lane_boundary_crossing_backwardBehavior_Tla_No {
+    position: absolute;
+    left: 334px;
+}
+
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_reservation_type_ownreserved,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_reservation_type_ownreserved,
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane.Tla_Yes_forwardBehavior_reservation_type_ownreserved,
+.showBehaviourDirection_forward.showTla_No .bssd_lane.Tla_No_forwardBehavior_reservation_type_ownreserved,
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane.Tla_Yes_backwardBehavior_reservation_type_ownreserved,
+.showBehaviourDirection_backward.showTla_No .bssd_lane.Tla_No_backwardBehavior_reservation_type_ownreserved {
+    background-color: var(--own_reserved_color);
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_reservation_type_equallyreserved,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_reservation_type_equallyreserved,
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane.Tla_Yes_forwardBehavior_reservation_type_equallyreserved,
+.showBehaviourDirection_forward.showTla_No .bssd_lane.Tla_No_forwardBehavior_reservation_type_equallyreserved,
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane.Tla_Yes_backwardBehavior_reservation_type_equallyreserved,
+.showBehaviourDirection_backward.showTla_No .bssd_lane.Tla_No_backwardBehavior_reservation_type_equallyreserved {
+/*    background-image:
+       repeating-linear-gradient(-45deg, 
+                                darkred 0%, 
+                                darkred 2%, darkgray 2%, 
+                                darkgray 4%, darkred 4%);
+*/
+    background-color: var(--equally_reserved_color)
+}
+
+.showBehaviourDirection_forward .bssd_lane.forwardBehavior_reservation_type_externallyreserved,
+.showBehaviourDirection_backward .bssd_lane.backwardBehavior_reservation_type_externallyreserved,
+
+.showBehaviourDirection_forward.showTla_Yes .bssd_lane.Tla_Yes_forwardBehavior_reservation_type_externallyreserved,
+.showBehaviourDirection_forward.showTla_No .bssd_lane.Tla_No_forwardBehavior_reservation_type_externallyreserved,
+.showBehaviourDirection_backward.showTla_Yes .bssd_lane.Tla_Yes_backwardBehavior_reservation_type_externallyreserved,
+.showBehaviourDirection_backward.showTla_No .bssd_lane.Tla_No_backwardBehavior_reservation_type_externallyreserved {
+    background-color: var(--externally_reserved_color);
+}
+
+
+.boundary_longitudinal_condition {
+    width: 12px;
+    height: 12px;
+    margin: auto auto auto auto;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+}
+
+
+.bd_boundary_longitudinal_condition_stop{
+
+    background-image: url("../templates/signs/stop.svg");
+}
+
+.bd_boundary_longitudinal_condition_nostagnanttraffic{
+    background-image: url("../templates/signs/nostagnanttraffic.svg");
+}
+
+.bd_boundary_longitudinal_condition_noredlight{
+    background-image: url("../templates/signs/noredlight.svg");
+}
+
+.bssd_overtake_permission_yes {
+
+    background-image: url("../templates/signs/overtake_yes.svg");
+    position: relative;
+}
+
+.bssd_overtake_permission_no {
+
+    background-image: url("../templates/signs/overtake_no.svg");
+    position: relative;
+}
+
+
+.bssd_speed_max {
+    
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    border: 4px solid #c1121c;
+    border-radius: 50%;
+
+    /*
+    -webkit-box-shadow: 0 0 3px 3px white;
+    box-shadow: 0 0 3px 3px white;
+    */
+
+    text-align: center;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    
+    margin: 8px auto 0 auto;
+}
+
+.bssd_speed_max:hover {
+    animation-name: zoom_speed;
+    animation-duration: 100ms;
+    animation-fill-mode: both;
+}
+
+@keyframes zoom_speed {
+    0%  {transform: scale(1)}
+    100% {transform: scale(1.7);
+    -webkit-box-shadow: 0 0 3px 3px white;
+    box-shadow: 0 0 3px 3px white;}
+
+}
+
+.speed_container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.time {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 0.3em;
+    border: 2px solid transparent;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    background-image: url("../templates/signs/clock.svg");
+
+    position: relative;
+}
+
+.time::before,
+.time::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    bottom: -0.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.time::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    
+    content: 'Interval: 'attr(data-timeInterval) '\A \A Speedlimit in Interval: ' attr(data-speed) ;
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .3rem;
+    
+    width: max-content;
+    white-space: pre;  
+
+}
+
+.time:hover::before,
+.time:hover::after {
+    --scale: 1;
+
+}
+
+.time::after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.time:hover {
+    border: 2px solid #fed100;
+
+}
+
+.wetMax {
+    width: 20px;
+    height: 20px;
+
+
+    border-radius: 0.3em;
+    border: 2px solid transparent;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-image: url("../templates/signs/wet.svg");
+    position: relative;
+}
+
+.wetMax::before,
+.wetMax::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    bottom: -0.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.wetMax::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    
+    content: 'Speedlimit for a wet road: 'attr(data-speed);
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .3rem;
+    
+    width: max-content;
+     white-space: pre;  
+
+}
+
+.wetMax:hover::before,
+.wetMax:hover::after {
+    --scale: 1;
+
+}
+
+.wetMax::after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.wetMax:hover {
+    border: 2px solid #fed100;
+
+}
+
+.reservation_objects {
+    width: 60px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 0.3rem;
+    position: relative;
+
+    margin: auto auto auto auto;
+}
+
+
+
+.reservation_object_pedestrian {
+    width: 30px;
+    height: 40px;
+
+    background-image: url("../templates/signs/pedestrian.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+
+.reservation_object_pedestrian:hover {
+    border: 2px solid var(--pedestrian_hover);
+}
+
+
+.reservation_object_bicycle {
+    background-image: url("../templates/signs/bicycle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: 50px;
+    height: 30px;
+}
+
+
+.reservation_object_bicycle:hover {
+    border: 2px solid var(--bicycle_hover);
+}
+
+
+.reservation_object_motorvehicle {
+    background-image: url("../templates/signs/motor_vehicle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.reservation_object_motorvehicle:hover {
+    border: 2px solid var(--motor_vehicle_hover);
+}
+
+.reservation_object_railedvehicle {
+    background-image: url("../templates/signs/railed_vehicle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.reservation_object_railedvehicle:hover {
+    border: 2px solid var(--railed_vehicle_hover);
+}
+
+.reservation_object_ownreserved  {
+    background-color: var(--own_reserved_color);
+}
+
+.reservation_object_equallyreserved {
+    background-color: var(--equally_reserved_color);
+}
+
+.reservation_object_externallyreserved  {
+    background-color: var(--externally_reserved_color);
+}
+
+
+
+/*===== TOOLTIPS =====*/
+
+
+
+.bssd_overtake_permission_no::before,
+.bssd_overtake_permission_yes::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    font-size: 10px;
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: 0.1rem;
+    border-radius: 0.2rem;
+    
+    width: max-content;
+
+}
+
+.bssd_overtake_permission_yes::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    
+    content: 'Overtake permission: Yes';
+}
+
+.bssd_overtake_permission_no::before {
+
+    content: 'Overtake permission: No';
+}
+
+
+.bssd_overtake_permission_yes::before,
+.bssd_overtake_permission_yes::after,
+.bssd_overtake_permission_no::before,
+.bssd_overtake_permission_no::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    bottom: -0.2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.bssd_overtake_permission_yes:hover::before,
+.bssd_overtake_permission_yes:hover::after,
+.bssd_overtake_permission_no:hover::before,
+.bssd_overtake_permission_no:hover::after {
+    --scale: 1;
+
+}
+
+.bssd_overtake_permission_yes::after,
+.bssd_overtake_permission_no::after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.bssd_overtake_permission_yes:hover,
+.bssd_overtake_permission_no:hover {
+    border: 2px solid #fed100;
+}
+
+
+.bd_boundary_longitudinal_condition_stop,
+.bd_boundary_longitudinal_condition_nostagnanttraffic,
+.bd_boundary_longitudinal_condition_noredlight {
+
+    border-radius: 0.3em;
+    border: 2px solid transparent;
+}
+
+.bd_boundary_longitudinal_condition_stop::before,
+.bd_boundary_longitudinal_condition_stop::after,
+.bd_boundary_longitudinal_condition_nostagnanttraffic::before,
+.bd_boundary_longitudinal_condition_nostagnanttraffic::after,
+.bd_boundary_longitudinal_condition_noredlight::before,
+.bd_boundary_longitudinal_condition_noredlight::after {
+    --scale: 0;
+    --arrow-size: 2px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    bottom: 0rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.bd_boundary_longitudinal_condition_stop::before,
+.bd_boundary_longitudinal_condition_nostagnanttraffic::before,
+.bd_boundary_longitudinal_condition_noredlight::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    
+    content: "condition for crossing: stop";
+    font-size: 4px;
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: 0.1rem;
+    border-radius: .1rem;
+    
+    width: max-content;
+}
+
+.bd_boundary_longitudinal_condition_stop::before {
+    content: "condition for crossing: stop";
+}
+
+.bd_boundary_longitudinal_condition_nostagnanttraffic::before {
+    content: "condition for crossing: no stagnant traffic";
+}
+
+.bd_boundary_longitudinal_condition_noredlight::before {
+
+    content: "condition for crossing: no red light";
+}
+
+
+.bd_boundary_longitudinal_condition_stop:hover::before,
+.bd_boundary_longitudinal_condition_stop:hover::after,
+.bd_boundary_longitudinal_condition_nostagnanttraffic:hover::before,
+.bd_boundary_longitudinal_condition_nostagnanttraffic:hover::after,
+.bd_boundary_longitudinal_condition_noredlight:hover::before,
+.bd_boundary_longitudinal_condition_noredlight:hover::after {
+    --scale: 1;
+}
+
+.bd_boundary_longitudinal_condition_stop::after,
+.bd_boundary_longitudinal_condition_nostagnanttraffic::after,
+.bd_boundary_longitudinal_condition_noredlight::after {
+    --translate-y: calc(var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.bd_boundary_longitudinal_condition_stop:hover,
+.bd_boundary_longitudinal_condition_nostagnanttraffic:hover,
+.bd_boundary_longitudinal_condition_noredlight:hover {
+    animation-name: zoom_condition;
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+
+}
+
+@keyframes zoom_condition {
+    0%  {transform: scale(1)}
+    100% {transform: scale(5.5);
+        z-index: 8;}
+
+}
+
+
+.bssd_lane::before,
+.bssd_lane::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    z-index: 8;
+    bottom: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 100ms transform;
+    transform-origin: top center;
+    
+
+}
+
+.bssd_lane::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    
+    content: 'Way-id:         'attr(data-way-id) '\A \A Segment-id:  ' attr(data-segment-id) '\A \A Lane-id:        ' attr(data-lane_id) '\A \A Predecessor-Lane-ids: ' attr(data-predecessor-ids) '\A Successor-Lane-ids:    ' attr(data-successor-ids);
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .3rem;
+    
+    white-space: pre;  
+    width: max-content;
+
+}
+
+.bssd_lane:active::before,
+.bssd_lane:active::after {
+    --scale: 1;
+
+}
+
+.bssd_lane::after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.bssd_lane:active {
+    border: 10px solid #fed100;
+    border-left: var(--longitudinalWidth) solid #fed100;
+    border-right: var(--longitudinalWidth) solid #fed100;
+}
+
+
+.title_bd::before,
+.title_bd::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    bottom: -0.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.title_bd::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    font-size: 15px;
+    
+    content: 'Defines the driving direction for which the behavior is described with respect to the reference direction. \A The possible directions are forward and backward.';
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .3rem;
+    white-space: pre;  
+
+    width: max-content;
+
+}
+
+.title_bd:hover::before,
+.title_bd:hover::after {
+    --scale: 1;
+
+}
+
+.title_bd::after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.title_bd:hover {
+    background: #e6ac00;
+
+}
+
+.title_tla::before,
+.title_tla::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    bottom: -0.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.title_tla::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    font-size: 15px;
+    
+    content: 'Specified if a lane is controlled by a trafficlight. \A Defines whether and reservation the crossing of the longitudinal boundary applies for an active or inactive traffic light.';
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .3rem;
+    
+    width: max-content;
+    white-space: pre;
+
+}
+
+.title_tla:hover::before,
+.title_tla:hover::after {
+    --scale: 1;
+
+}
+
+.title_tla::after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.title_tla:hover {
+    background: #e6ac00;
+
+}
+
+
+.tt_allowed,
+.tt_conditional,
+.tt_prohibited,
+.tt_not_possible,
+.tt_own_reserved,
+.tt_equally_reserved,
+.tt_externally_reserved,
+.tt_link {
+    position: relative;
+    border-radius: 0.3em;
+    border: 2px solid transparent;
+
+}
+
+
+.tt_allowed::before,
+.tt_allowed::after,
+.tt_conditional::before,
+.tt_conditional::after,
+.tt_prohibited::before,
+.tt_prohibited::after,
+.tt_not_possible::before,
+.tt_not_possible::after,
+.tt_own_reserved::before,
+.tt_own_reserved::after,
+.tt_equally_reserved::before,
+.tt_equally_reserved::after,
+.tt_externally_reserved::before,
+.tt_externally_reserved::after,
+.tt_link::before,
+.tt_link::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    bottom: -0.25rem;
+    left: 50%;
+    transform: translateX(-90%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.tt_allowed::before,
+.tt_conditional::before,
+.tt_prohibited::before,
+.tt_not_possible::before,
+.tt_own_reserved::before,
+.tt_equally_reserved::before,
+.tt_externally_reserved::before,
+.tt_link::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    font-size: 15px;
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .3rem;
+
+    
+    white-space: pre;
+    width: max-content;
+}
+
+
+.tt_allowed:hover::before,
+.tt_allowed:hover::after,
+.tt_conditional:hover::before,
+.tt_conditional:hover::after,
+.tt_prohibited:hover::before,
+.tt_prohibited:hover::after,
+.tt_not_possible:hover::before,
+.tt_not_possible:hover::after,
+.tt_own_reserved:hover::before,
+.tt_own_reserved:hover::after,
+.tt_equally_reserved:hover::before,
+.tt_equally_reserved:hover::after,
+.tt_externally_reserved:hover::before,
+.tt_externally_reserved:hover::after,
+.tt_link:hover::before,
+.tt_link:hover::after {
+    --scale: 1;
+
+}
+
+.tt_allowed::after,
+.tt_conditional::after,
+.tt_prohibited::after,
+.tt_not_possible::after,
+.tt_own_reserved::after,
+.tt_equally_reserved::after,
+.tt_externally_reserved::after,
+.tt_link:after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.tt_allowed:hover,
+.tt_conditional:hover,
+.tt_prohibited:hover,
+.tt_not_possible:hover,
+.tt_own_reserved:hover,
+.tt_equally_reserved:hover,
+.tt_externally_reserved:hover,
+.tt_link:hover {
+    border: 2px solid #e6ac00;
+
+}
+
+
+.tt_allowed::before {
+    content: 'Longitudinal: Rule regarding the crossing of the boundary, seen from outside the lane \A Lateral: Rule regarding the crossing of the boundary, seen from inside the lane';
+}
+
+.tt_conditional::before {
+    content: 'Longitudinal: Rule regarding the crossing of the boundary, seen from outside the lane \A Lateral: Rule regarding the crossing of the boundary, seen from inside the lane \A Conditions can be: stop, no trafficlight or no stagnant traffic';
+}
+
+.tt_prohibited::before {
+    content: 'Longitudinal: Rule regarding the crossing of the boundary, seen from outside the lane \A Lateral: Rule regarding the crossing of the boundary, seen from inside the lane';
+}
+
+.tt_not_possible::before {
+    content: 'Longitudinal: Rule regarding the crossing of the boundary, seen from outside the lane \A Lateral: Rule regarding the crossing of the boundary, seen from inside the lane';
+}
+
+.tt_own_reserved::before {
+    content: 'Defines the reservation of the lane within a way segment.';
+}
+
+.tt_equally_reserved::before {
+    content: 'Defines the reservation of the lane within a way segment';
+}
+
+.tt_externally_reserved::before {
+    content: 'Defines the reservation of the lane within a way segment';
+}
+
+.tt_link::before {
+    content: 'Hover over a reservation receiving object to see which lane or area it may come from';
+}
+
+
+.tt_pedestrian,
+.tt_bicycle,
+.tt_motorvehicle,
+.tt_railedvehicle {
+
+    position: relative;
+    border-radius: 0.3em;
+    border: 2px solid transparent;
+}
+
+
+.tt_pedestrian::before,
+.tt_pedestrian::after,
+.tt_bicycle::before,
+.tt_bicycle::after,
+.tt_motorvehicle::before,
+.tt_motorvehicle::after,
+.tt_railedvehicle::before,
+.tt_railedvehicle::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: #333;
+
+    position: absolute;
+
+    bottom: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale)); 
+    transition: 150ms transform;
+    transform-origin: top center;
+    z-index: 8;
+
+}
+
+.tt_pedestrian::before,
+.tt_bicycle::before,
+.tt_motorvehicle::before,
+.tt_railedvehicle::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    
+    color: white;
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .3rem;
+    
+    width: max-content;
+    white-space: pre;
+
+}
+
+.tt_pedestrian:hover::before,
+.tt_pedestrian:hover::after,
+.tt_bicycle:hover::before,
+.tt_bicycle:hover::after,
+.tt_motorvehicle:hover::before,
+.tt_motorvehicle:hover::after,
+.tt_railedvehicle:hover::before,
+.tt_railedvehicle:hover::after {
+    --scale: 1;
+
+}
+
+.tt_pedestrian::after,
+.tt_bicycle::after,
+.tt_motorvehicle::after,
+.tt_railedvehicle::after {
+    --translate-y: calc(1 * var(--arrow-size));
+    content: '';
+
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltip-color);
+    transform-origin: bottom center;
+}
+
+.tt_pedestrian::before {
+    content: 'Reserved for traffic participant pedestrian \A Hover over to see where the reservation receiving object may come from';
+}
+
+.tt_bicycle::before {
+    content: 'Reserved for traffic participant bicycle \A Hover over to see where the reservation receiving object may come from';
+}
+
+.tt_motorvehicle::before {
+    content: 'Reserved for traffic participant motorvehicle \A Hover over to see where the reservation receiving object may come from';
+}
+
+.tt_railedvehicle::before {
+    content: 'Reserved for traffic participant railedvehicle \A Hover over to see where the reservation receiving object may come from';
+}
+
+.tt_pedestrian:hover,
+.tt_bicycle:hover,
+.tt_motorvehicle:hover,
+.tt_railedvehicle:hover {
+
+    border: 2px solid #e6ac00;
+}
+
+
+.reservation_objects::before,
+.reservation_objects::after {
+  --scale: 0;
+  --arrow-size: 10px;
+  --tooltip-color: steelblue;
+
+  position: absolute;
+  z-index: 200;
+  top: -.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+  transition: 150ms transform;
+  transform-origin: bottom center;
+}
+
+.reservation_objects::before {
+  --translate-y: calc(-100% - var(--arrow-size));
+
+  content: attr(data-links);
+  color: white;
+  padding: .5rem;
+  border-radius: .3rem;
+  text-align: center;
+  width: max-content;
+  max-width: 320px;
+  background: var(--tooltip-color);
+}
+
+.reservation_objects:active::before,
+.reservation_objects:active::after {
+  --scale: 1;
+}
+
+.reservation_objects::after {
+  --translate-y: calc(-1 * var(--arrow-size));
+
+  content: '';
+  border: var(--arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}
+
+.way_info::before,
+.way_info::after {
+  --scale: 0;
+  --arrow-size: 10px;
+  --tooltip-color: #333;
+
+  position: absolute;
+  top: -.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+  transition: 150ms transform;
+  transform-origin: bottom center;
+  z-index: 8;
+}
+
+.way_info::before {
+  --translate-y: calc(-100% - var(--arrow-size));
+
+  font-size: 20px;
+  content: 'Predecessor: 'attr(data-predecessor) '\A' 'Successor: 'attr(data-successor);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  width: max-content;
+  max-width: 100%;
+  background: var(--tooltip-color);
+  white-space: pre;
+
+}
+
+.way_info:active::before,
+.way_info:active::after {
+  --scale: 1;
+}
+
+.way_info:hover {
+    background: #e6ac00;
+    border-radius: 0.3rem;
+}
+
+.way_info::after {
+  --translate-y: calc(-1 * var(--arrow-size));
+
+  content: '';
+  border: var(--arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}
+
+

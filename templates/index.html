@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BSSD Visualizer</title>
+    <link rel="stylesheet" href="../templates/style.css">
+    <script src="../templates/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    {% autoescape off %}
+    {{ viz | safe}}
+    {% endautoescape %}
+    <script>
+
+    </script>
+</body>
+</html>

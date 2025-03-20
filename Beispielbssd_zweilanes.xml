@@ -1,0 +1,1920 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BSSD version="1.0">
+    <header>
+        <name>Beispiel_straße</name>
+        <revisionNumber>1</revisionNumber>
+        <date>20.11.20</date>
+        <rule>RHT</rule>
+    </header>
+    <way id="1" from="7" to="8" node="-1">
+        <link>
+            <predecessor>elementType="node" elementId="7"</predecessor>
+            <successor>elementType="node" elementId="8"</successor>
+        </link>
+        <segment id="1">
+            <left>
+                <lane id="4">
+                    <link>
+                        <predecessor laneId="4"/>
+                        <successor laneId="4"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="conditional">
+                                <condition type="stop"></condition>
+                                <condition type="no stagnant traffic"></condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="2" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="pedestrian">
+                            <link id="3" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="railed vehicle">
+                            <link id="4" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30" timeMax="55" timeInterval="Mo-Fr,6-22" wetMax="65"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed max="30"></speed>
+                        <overtake permission="yes"></overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="3">
+                    <link>
+                        <predecessor laneId="3"/>
+                        <successor laneId="3"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="conditional">
+                                <condition type="stop"></condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed max="30"></speed>
+                        <overtake permission="yes"></overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="2">
+                    <link>
+                        <predecessor laneId="2"/>
+                        <successor laneId="2"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="conditional">
+                                <condition type="stop"></condition>
+                                <condition type="noredlight"></condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="equally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="equally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="conditional">
+                                <condition type="stop"></condition>
+                                <condition type="noredlight"></condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="equally-reserved"/>
+                        <speed max="30"></speed>
+                        <overtake permission="yes"></overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="1">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed max="30"></speed>
+                        <overtake permission="yes"></overtake>
+                    </backwardBehavior>
+                </lane>
+            </left>
+            <right>
+                <lane id="-1">
+                    <link>
+                        <predecessor laneId="-1"/>
+                        <successor laneId="-1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-2">
+                    <link>
+                        <predecessor laneId="-2"/>
+                        <successor laneId="-2"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-3">
+                    <link>
+                        <predecessor laneId="-3"/>
+                        <successor laneId="-3"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-4">
+                    <link>
+                        <predecessor laneId="-4"/>
+                        <successor laneId="-4"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+            </right>
+        </segment>
+        <segment id="2">
+            <left>
+                <lane id="4">
+                    <link>
+                        <predecessor laneId="4"/>
+                        <successor laneId="4"/>
+                        <successor laneId="3"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="conditional" trafficLightActive="yes">
+                                <condition type="no red light"/>
+                            </longitudinal>
+                            <longitudinal crossing="conditional" trafficLightActive="no">
+                                <condition type="stop"/>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30" timeMax="55" timeInterval="Mo-Fr,6-22" wetMax="65"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="conditional" trafficLightActive="yes">
+                                <condition type="no red light"/>
+                            </longitudinal>
+                            <longitudinal crossing="conditional" trafficLightActive="no">
+                                <condition type="stop"/>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed max="30" timeMax="55" timeInterval="Mo-Fr,6-22" wetMax="65"/>
+                        <overtake permission="yes"></overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="3">
+                    <link>
+                        <predecessor laneId="4"/>
+                        <successor laneId="4"/>
+                        <successor laneId="3"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="not possible" trafficLightActive="yes">
+                                <condition type="no stagnant traffic"/>
+                            </longitudinal>
+                            <longitudinal crossing="prohibited" trafficLightActive="no">
+                                <condition type="stop"/>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="own-reserved" trafficLightActive="yes"/>
+                        <reservation id="2" type="externally-reserved" object="railed vehicle" trafficLightActive="no">
+                            <link id="1" linkedWay="2" linkedSegment="2" linkedArea="inf"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="motor vehicle" trafficLightActive="no">
+                            <link id="1" linkedWay="2" linkedSegment="2" linkedArea="inf"/>
+                        </reservation>
+                        <speed max="30" timeMax="55" timeInterval="Mo-Fr,6-22" wetMax="65"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="conditional" trafficLightActive="yes">
+                                <condition type="no red light"/>
+                            </longitudinal>
+                            <longitudinal crossing="allowed" trafficLightActive="no">
+                                <condition type="stop"/>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="own-reserved" trafficLightActive="yes"/>
+                        <reservation id="2" type="externally-reserved" object="motor vehicle" trafficLightActive="no">
+                            <link id="1" linkedWay="2" linkedSegment="2" linkedArea="inf"/>
+                        </reservation>
+                        <speed max="30" timeMax="55" timeInterval="Mo-Fr,6-22" wetMax="65"/>
+                        <overtake permission="yes"></overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="2">
+                    <link>
+                        <predecessor laneId="2"/>
+                        <successor laneId="2"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30" wetMax="65"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed max="30" wetMax="65"></speed>
+                        <overtake permission="yes"></overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="1">
+                    <link>
+                        <predecessor laneId="-1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed max="30"></speed>
+                        <overtake permission="yes"></overtake>
+                    </backwardBehavior>
+                </lane>
+            </left>
+            <right>
+                <lane id="-1">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="-1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-2">
+                    <link>
+                        <predecessor laneId="-2"/>
+                        <successor laneId="-2"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-3">
+                    <link>
+                        <predecessor laneId="-3"/>
+                        <successor laneId="-3"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-4">
+                    <link>
+                        <predecessor laneId="-4"/>
+                        <successor laneId="-3"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+            </right>
+        </segment>
+        <segment id="3">
+            <left>
+                <lane id="3">
+                    <link>
+                        <predecessor laneId="3"></predecessor>
+                        <predecessor laneId="4"></predecessor>
+                        <successor laneId="3"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited">
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="23" type="externally-reserved" object="bicycle">
+                            <link id="23" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="24" type="externally-reserved" object="motor vehicle">
+                            <link id="24" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="25" type="own-reserved"></reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="2">
+                    <link>
+                        <predecessor laneId="2"></predecessor>
+                        <successor laneId="2"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="23" type="externally-reserved" object="bicycle">
+                            <link id="23" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="24" type="externally-reserved" object="motor vehicle">
+                            <link id="24" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="25" type="own-reserved"></reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="1">
+                    <link>
+                        <predecessor laneId="1"></predecessor>
+                        <successor laneId="1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="23" type="externally-reserved" object="bicycle">
+                            <link id="23" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="24" type="externally-reserved" object="motor vehicle">
+                            <link id="24" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="25" type="own-reserved"></reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+            </left>
+            <right>
+                <lane id="-1">
+                    <link>
+                        <predecessor laneId="-1"></predecessor>
+                        <successor laneId="-1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="26" type="own-reserved"></reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="27" type="externally-reserved" object="bicycle">
+                            <link id="27" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="28" type="externally-reserved" object="motor vehicle">
+                            <link id="28" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-2">
+                    <link>
+                        <predecessor laneId="-2"></predecessor>
+                        <successor laneId="-2"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="26" type="own-reserved"></reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="27" type="externally-reserved" object="bicycle">
+                            <link id="27" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="28" type="externally-reserved" object="motor vehicle">
+                            <link id="28" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-3">
+                    <link>
+                        <predecessor laneId="-3"></predecessor>
+                        <predecessor laneId="-4"></predecessor>
+                        <successor laneId="-3"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="26" type="own-reserved"></reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="27" type="externally-reserved" object="bicycle">
+                            <link id="27" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="28" type="externally-reserved" object="motor vehicle">
+                            <link id="28" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+            </right>
+        </segment>
+        <segment id="4">
+            <left>
+                <lane id="3">
+                    <link>
+                        <predecessor laneId="3"></predecessor>
+                        <successor laneId="3"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"></longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="29" type="externally-reserved" object="bicycle">
+                            <link id="29" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="30" type="externally-reserved" object="motor vehicle">
+                            <link id="30" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"></longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="31" type="own-reserved"></reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="2">
+                    <link>
+                        <predecessor laneId="2"></predecessor>
+                        <successor laneId="2"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"></longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="29" type="externally-reserved" object="bicycle">
+                            <link id="29" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="30" type="externally-reserved" object="motor vehicle">
+                            <link id="30" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"></longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="31" type="own-reserved"></reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="1">
+                    <link>
+                        <predecessor laneId="1"></predecessor>
+                        <successor laneId="1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"></longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="29" type="externally-reserved" object="bicycle">
+                            <link id="29" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="30" type="externally-reserved" object="motor vehicle">
+                            <link id="30" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"></longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="31" type="own-reserved"></reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+            </left>
+            <right>
+                <lane id="-1">
+                    <link>
+                        <predecessor laneId="-1"></predecessor>
+                        <successor laneId="-1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"></longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="32" type="own-reserved"></reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="33" type="externally-reserved" object="bicycle">
+                            <link id="33" linkedWay="1" linkedSegment="3" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="34" type="externally-reserved" object="motor vehicle">
+                            <link id="34" linkedWay="1" linkedSegment="3" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-2">
+                    <link>
+                        <predecessor laneId="-2"></predecessor>
+                        <successor laneId="-2"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"></longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="32" type="own-reserved"></reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="33" type="externally-reserved" object="bicycle">
+                            <link id="33" linkedWay="1" linkedSegment="3" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="34" type="externally-reserved" object="motor vehicle">
+                            <link id="34" linkedWay="1" linkedSegment="3" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-3">
+                    <link>
+                        <predecessor laneId="-3"></predecessor>
+                        <successor laneId="-3"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"></longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="32" type="own-reserved"></reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="33" type="externally-reserved" object="bicycle">
+                            <link id="33" linkedWay="1" linkedSegment="3" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="34" type="externally-reserved" object="motor vehicle">
+                            <link id="34" linkedWay="1" linkedSegment="3" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+            </right>
+        </segment>
+    </way>
+    <way id="2" from="7" to="8" node="-1">
+        <link>
+            <predecessor elementType="node" elementId="7"></predecessor>
+            <successor elementType="node" elementId="8"></successor>
+        </link>
+        <segment id="1">
+            <left>
+                <lane id="1">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed>max="30"</speed>
+                        <overtake>permission="yes"</overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="4">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed>max="30"</speed>
+                        <overtake>permission="yes"</overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="2">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed>max="30"</speed>
+                        <overtake>permission="yes"</overtake>
+                    </backwardBehavior>
+                </lane>
+                <lane id="3">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="1" type="externally-reserved" object="motor vehicle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <reservation id="2" type="externally-reserved" object="bicycle">
+                            <link id="1" linkedWay="1" linkedSegment="2" linkedArea="1"/>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="3" type="own-reserved"/>
+                        <speed>max="30"</speed>
+                        <overtake>permission="yes"</overtake>
+                    </backwardBehavior>
+                </lane>
+            </left>
+            <right>
+                <lane id="-3">
+                    <link>
+                        <predecessor laneId="-1"/>
+                        <successor laneId="-1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-2">
+                    <link>
+                        <predecessor laneId="-1"/>
+                        <successor laneId="-1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-4">
+                    <link>
+                        <predecessor laneId="-1"/>
+                        <successor laneId="-1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-1">
+                    <link>
+                        <predecessor laneId="-1"/>
+                        <successor laneId="-1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"/>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="4" type="own-reserved"/>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="5" type="externally-reserved" object="bicycle">
+                            <link id="5" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="6" type="externally-reserved" object="motor vehicle">
+                            <link id="6" linkedWay="1" linkedSegment="1" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+            </right>
+        </segment>
+        <segment id="2">
+            <left>
+                <lane id="1">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="7" type="externally-reserved" object="pedestrian">
+                            <link id="7" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="8" type="externally-reserved" object="pedestrian">
+                            <link id="8" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="9" type="externally-reserved" object="pedestrian">
+                            <link id="9" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <reservation id="10" type="externally-reserved" object="bicycle">
+                            <link id="10" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <reservation id="11" type="externally-reserved" object="motor vehicle">
+                            <link id="11" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal>
+                                <condition crossing="allowed">
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="12" type="externally-reserved" object="pedestrian">
+                            <link id="12" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="13" type="externally-reserved" object="pedestrian">
+                            <link id="13" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="14" type="externally-reserved" object="pedestrian">
+                            <link id="14" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="3">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="7" type="externally-reserved" object="pedestrian">
+                            <link id="7" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="8" type="externally-reserved" object="pedestrian">
+                            <link id="8" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="9" type="externally-reserved" object="pedestrian">
+                            <link id="9" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <reservation id="10" type="externally-reserved" object="bicycle">
+                            <link id="10" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <reservation id="11" type="externally-reserved" object="motor vehicle">
+                            <link id="11" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal>
+                                <condition crossing="allowed">
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="12" type="externally-reserved" object="pedestrian">
+                            <link id="12" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="13" type="externally-reserved" object="pedestrian">
+                            <link id="13" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="14" type="externally-reserved" object="pedestrian">
+                            <link id="14" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="2">
+                    <link>
+                        <predecessor laneId="1"/>
+                        <successor laneId="1"/>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"/>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="7" type="externally-reserved" object="pedestrian">
+                            <link id="7" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="8" type="externally-reserved" object="pedestrian">
+                            <link id="8" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="9" type="externally-reserved" object="pedestrian">
+                            <link id="9" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <reservation id="10" type="externally-reserved" object="bicycle">
+                            <link id="10" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <reservation id="11" type="externally-reserved" object="motor vehicle">
+                            <link id="11" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal>
+                                <condition crossing="allowed">
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="12" type="externally-reserved" object="pedestrian">
+                            <link id="12" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="13" type="externally-reserved" object="pedestrian">
+                            <link id="13" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="14" type="externally-reserved" object="pedestrian">
+                            <link id="14" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+            </left>
+            <right>
+                <lane id="-1">
+                    <link>
+                        <predecessor laneId="-1"></predecessor>
+                        <successor laneId="-1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="15" type="externally-reserved" object="pedestrian">
+                            <link id="15" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="16" type="externally-reserved" object="pedestrian">
+                            <link id="16" linkedWay="1" linkedSegment="2" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="17" type="externally-reserved" object="pedestrian">
+                            <link id="17" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"></longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="18" type="externally-reserved" object="pedestrian">
+                            <link id="18" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="19" type="externally-reserved" object="pedestrian">
+                            <link id="19" linkedWay="1" linkedSegment="2" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="20" type="externally-reserved" object="pedestrian">
+                            <link id="20" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <reservation id="21" type="externally-reserved" object="bicycle">
+                            <link id="21" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <reservation id="22" type="externally-reserved" object="motor vehicle">
+                            <link id="22" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-3">
+                    <link>
+                        <predecessor laneId="-1"></predecessor>
+                        <successor laneId="-1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="15" type="externally-reserved" object="pedestrian">
+                            <link id="15" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="16" type="externally-reserved" object="pedestrian">
+                            <link id="16" linkedWay="1" linkedSegment="2" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="17" type="externally-reserved" object="pedestrian">
+                            <link id="17" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"></longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="18" type="externally-reserved" object="pedestrian">
+                            <link id="18" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="19" type="externally-reserved" object="pedestrian">
+                            <link id="19" linkedWay="1" linkedSegment="2" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="20" type="externally-reserved" object="pedestrian">
+                            <link id="20" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <reservation id="21" type="externally-reserved" object="bicycle">
+                            <link id="21" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <reservation id="22" type="externally-reserved" object="motor vehicle">
+                            <link id="22" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+                <lane id="-2">
+                    <link>
+                        <predecessor laneId="-1"></predecessor>
+                        <successor laneId="-1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="15" type="externally-reserved" object="pedestrian">
+                            <link id="15" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="16" type="externally-reserved" object="pedestrian">
+                            <link id="16" linkedWay="1" linkedSegment="2" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="17" type="externally-reserved" object="pedestrian">
+                            <link id="17" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"></longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="18" type="externally-reserved" object="pedestrian">
+                            <link id="18" linkedWay="1" linkedSegment="2" linkedArea="-∞"></link>
+                        </reservation>
+                        <reservation id="19" type="externally-reserved" object="pedestrian">
+                            <link id="19" linkedWay="1" linkedSegment="2" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="20" type="externally-reserved" object="pedestrian">
+                            <link id="20" linkedWay="1" linkedSegment="2" linkedArea="∞"></link>
+                        </reservation>
+                        <reservation id="21" type="externally-reserved" object="bicycle">
+                            <link id="21" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <reservation id="22" type="externally-reserved" object="motor vehicle">
+                            <link id="22" linkedWay="1" linkedSegment="2" linkedArea="0"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+            </right>
+        </segment>
+        <segment id="3">
+            <left>
+                <lane id="1">
+                    <link>
+                        <predecessor laneId="1"></predecessor>
+                        <successor laneId="1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="23" type="externally-reserved" object="bicycle">
+                            <link id="23" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="24" type="externally-reserved" object="motor vehicle">
+                            <link id="24" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="30"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="25" type="own-reserved"></reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+            </left>
+            <right>
+                <lane id="-1">
+                    <link>
+                        <predecessor laneId="-1"></predecessor>
+                        <successor laneId="-1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="allowed"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="26" type="own-reserved"></reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="allowed"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="27" type="externally-reserved" object="bicycle">
+                            <link id="27" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <reservation id="28" type="externally-reserved" object="motor vehicle">
+                            <link id="28" linkedWay="1" linkedSegment="2" linkedArea="-1"></link>
+                        </reservation>
+                        <speed max="50"/>
+                        <overtake permission="yes"/>
+                    </backwardBehavior>
+                </lane>
+            </right>
+        </segment>
+        <segment id="4">
+            <left>
+                <lane id="1">
+                    <link>
+                        <predecessor laneId="1"></predecessor>
+                        <successor laneId="1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="prohibited"></longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="29" type="externally-reserved" object="bicycle">
+                            <link id="29" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="30" type="externally-reserved" object="motor vehicle">
+                            <link id="30" linkedWay="1" linkedSegment="4" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"></longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="31" type="own-reserved"></reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+            </left>
+            <right>
+                <lane id="-1">
+                    <link>
+                        <predecessor laneId="-1"></predecessor>
+                        <successor laneId="-1"></successor>
+                    </link>
+                    <forwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed"></longitudinal>
+                            <lateral>
+                                <left crossing="prohibited"/>
+                                <right crossing="not possible"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="32" type="own-reserved"></reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </forwardBehavior>
+                    <backwardBehavior>
+                        <boundary>
+                            <longitudinal crossing="allowed">
+                                <condition>
+                                </condition>
+                            </longitudinal>
+                            <lateral>
+                                <left crossing="not possible"/>
+                                <right crossing="prohibited"/>
+                            </lateral>
+                        </boundary>
+                        <reservation id="33" type="externally-reserved" object="bicycle">
+                            <link id="33" linkedWay="1" linkedSegment="3" linkedArea="1"></link>
+                        </reservation>
+                        <reservation id="34" type="externally-reserved" object="motor vehicle">
+                            <link id="34" linkedWay="1" linkedSegment="3" linkedArea="1"></link>
+                        </reservation>
+                        <speed max="80"/>
+                        <overtake permission="no"/>
+                    </backwardBehavior>
+                </lane>
+            </right>
+        </segment>
+    </way>
+    <node id="7" infinitesimal="yes">
+        <connection id="1" incomingWay="99" connectingWay="-1" outgoingWay="1">
+            <laneLink incomingLane="-1" connectingLane="0" outgoingLane="-1"/>
+        </connection>
+        <connection id="2" incomingWay="98" connectingWay="-1" outgoingWay="1">
+            <laneLink incomingLane="1" connectingLane="0" outgoingLane="1"/>
+            <laneLink incomingLane="-1" connectingLane="0" outgoingLane="-1"/>
+        </connection>
+    </node>
+    <node id="8" infinitesimal="yes">
+        <connection id="8" incomingWay="1" connectingWay="-1" outgoingWay="2">
+            <laneLink incomingLane="1" connectingLane="0" outgoingLane="1"/>
+            <laneLink incomingLane="-1" connectingLane="0" outgoingLane="-1"/>
+        </connection>
+        <connection id="8" incomingWay="1" connectingWay="-1" outgoingWay="3">
+            <laneLink incomingLane="-1" connectingLane="0" outgoingLane="-1"/>
+        </connection>
+    </node>
+</BSSD>
