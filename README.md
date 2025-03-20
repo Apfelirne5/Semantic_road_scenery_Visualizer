@@ -1,4 +1,4 @@
-# Semantic road-scenery Visualization
+# Semantic road-scenery Visualizer
 
 1. Install python 3.9.2
 2. Open command prompt and install the requirements file with "pip install -r requirements.txt"
